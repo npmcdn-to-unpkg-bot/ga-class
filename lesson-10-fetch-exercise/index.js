@@ -44,8 +44,8 @@ fetch('http://maps.googleapis.com/maps/api/geocode/json?address=Redfern').then((
 }).then((dataAsJson) => {
 
   // Store lat and long as variables - Look for the right object
-  lat = dataAsJson.results[0].geometry.location.lat
-  long = dataAsJson.results[0].geometry.location.lng
+  var lat = dataAsJson.results[0].geometry.location.lat
+      long = dataAsJson.results[0].geometry.location.lng
 
   // Once we have the lat long co-ords call the weather function
   weather(lat, long);
