@@ -20,13 +20,12 @@ require('isomorphic-fetch');
 
 // 2 - Use the forecast.io API to get the current weather in your area
 
-function weather() {
+function weather(lat, long) {
 
   fetch('https://api.forecast.io/forecast/' + process.env.FORECAST_KEY + '/' + lat + ',' + long + '?units=si').then((response) => {
     return response.json()
   }).then((dataAsJson) => {
-
-    console.log(dataAsJson);
+    // console.log(dataAsJson);
     console.log('At ' + dataAsJson.timezone + '\n' + 'The weather is ' + dataAsJson.hourly.summary + '\n' + 'Current temp is ' + dataAsJson.currently.temperature + ' degrees celcius');
   }).catch(function(err) {
     console.log('Error Forecast ', err);
@@ -45,11 +44,11 @@ fetch('http://maps.googleapis.com/maps/api/geocode/json?address=Redfern').then((
 }).then((dataAsJson) => {
 
   // Store lat and long as variables - Look for the right object
-  lat = dataAsJson.results[0].geometry.location.lat;
-  long = dataAsJson.results[0].geometry.location.lng;
+  lat = dataAsJson.results[0].geometry.location.lat
+  long = dataAsJson.results[0].geometry.location.lng
 
   // Once we have the lat long co-ords call the weather function
-  weather();
+  weather(lat, long);
 
 }).catch(function(err) {
   console.log('Error GooleAPI ', err );
