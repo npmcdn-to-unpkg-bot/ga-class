@@ -1,5 +1,35 @@
 # My First Slackbot
 
+
+
+Type 'RSS' in mention, direct mention or direct message
+
+- Listens for RSS keyword but in the future will listen for RSS update
+- Custom name and avatar for bot
+- Chooses a random sucess emjoi from array :boom: :raised_hands: :thumbsup: :star2: :sunglasses:
+
+
+// FUTURE IDEA Bot that watches RSS Feed and posts message plus emoji.
+
+
+
+Type 'DM ' and username in mention, direct mention or direct message
+
+- Listens for DM keyword
+- Extracts the username form the command
+- Gets the list of users
+- Loops through list and get the real name
+- DMs the user with a message containing their real name
+
+
+Listen for 'First user' keyword in mention, direct mention or DM and replies with the first name from the users list
+
+- Listens for First user command
+- Returns the name of the first user in the list
+
+
+
+
 This project serves as a base to start creating a slackbot.
 
 The tools used include:
